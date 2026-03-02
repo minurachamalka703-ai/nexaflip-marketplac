@@ -12,14 +12,13 @@
         .bg-wasabi { background-color: var(--wasabi); }
         .border-wasabi { border-color: var(--wasabi); }
         
-        /* Hidden state for the store */
+        /* Smooth state for the store */
         #marketplace-store {
             display: none;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.6s ease-in-out;
         }
 
-        /* Revealed state */
         #marketplace-store.active {
             display: block;
             opacity: 1;
@@ -42,7 +41,7 @@
 
     <section class="pt-16 pb-12 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-5xl font-black mb-4">Master the Digital Hunt.</h2>
+            <h2 class="text-5xl font-black mb-4 tracking-tight">Master the Digital Hunt.</h2>
             <p class="text-xl text-slate-400">Choose your path in the 2026 digital economy.</p>
         </div>
 
@@ -53,6 +52,100 @@
                 <p class="text-slate-500 mb-8">Browse pre-vetted, high-yield digital assets ready for immediate acquisition.</p>
                 <button onclick="revealStore()" class="w-full text-center bg-teal text-wasabi py-4 rounded-xl font-black tracking-wide hover:bg-black transition shadow-lg">BROWSE STORE</button>
             </div>
+
+            <div class="group p-10 bg-teal border-2 border-teal rounded-[2.5rem] shadow-xl hover:border-wasabi transition-all duration-500">
+                <div class="bg-slate-800 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6 text-white">💰</div>
+                <h2 class="text-3xl font-black mb-3 text-white">Sell your Exit</h2>
+                <p class="text-slate-400 mb-8">List your asset for free and reach 50,000+ investors globally. Get a 30x exit.</p>
+                <button class="w-full bg-wasabi text-teal py-4 rounded-xl font-black tracking-wide hover:scale-[1.02] transition">LIST YOUR SITE</button>
+            </div>
+        </div>
+
+        <div id="marketplace-store" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-200 pb-8 gap-4">
+                <div>
+                    <h2 class="text-4xl font-black text-teal">NexaFlip Inventory</h2>
+                    <p class="text-slate-500 mt-2 italic">"A lion doesn't worry about how many hyenas are in the way."</p>
+                </div>
+                <div class="flex gap-2 text-[10px] font-bold uppercase tracking-widest">
+                    <span class="bg-wasabi text-teal px-4 py-2 rounded-full">All Deals</span>
+                    <span class="bg-slate-200 px-4 py-2 rounded-full hover:bg-slate-300 cursor-pointer transition">SaaS</span>
+                </div>
+            </div>
+
+            <div class="store-grid">
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all group overflow-hidden">
+                    <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+                        <img src="https://i.ibb.co/7JhFq8wR/784419afb315b2e19ce88976939d7495-jpg-720x720q80-jpg.webp" 
+                             alt="Premium Asset" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-teal text-wasabi text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-xl">
+                            New Listing
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-black text-teal">Modern Digital Asset</h3>
+                            <span class="text-green-600 font-bold text-sm">Verified</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-6">High-growth potential with audited revenue channels.</p>
+                        <div class="flex items-center justify-between border-t border-slate-50 pt-4">
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-slate-300">Asking Price</p>
+                                <span class="text-2xl font-black text-teal">$45,000</span>
+                            </div>
+                            <button class="bg-teal text-wasabi text-xs font-bold px-6 py-3 rounded-xl hover:bg-black transition shadow-md">
+                                Inquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all group overflow-hidden">
+                    <div class="h-56 w-full bg-slate-100 overflow-hidden relative flex items-center justify-center">
+                        <span class="text-slate-300 font-bold italic">Photo Pending...</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-black text-teal">SaaS Automation Kit</h3>
+                            <span class="text-slate-400 font-bold text-sm">Escrow</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-6">Ready to scale infrastructure for 2026 AI markets.</p>
+                        <div class="flex items-center justify-between border-t border-slate-50 pt-4">
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-slate-300">Asking Price</p>
+                                <span class="text-2xl font-black text-teal">$12,800</span>
+                            </div>
+                            <button class="bg-slate-200 text-teal text-xs font-bold px-6 py-3 rounded-xl hover:bg-teal hover:text-white transition">
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-20 px-6 opacity-30 text-xs font-bold tracking-widest uppercase">
+        &copy; 2026 NexaFlip Markets | Digital Acquisition Authority
+    </footer>
+
+    <script>
+        function revealStore() {
+            const store = document.getElementById('marketplace-store');
+            store.classList.add('active');
+            
+            // Wait for display change then scroll
+            setTimeout(() => {
+                window.scrollTo({
+                    top: store.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }, 50);
+        }
+    </script>
+</body>
+</html>            </div>
 
             <div class="group p-10 bg-teal border-2 border-teal rounded-[2.5rem] shadow-xl hover:border-wasabi transition-all duration-500">
                 <div class="bg-slate-800 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6 text-white">💰</div>
@@ -136,3 +229,4 @@
     </script>
 </body>
 </html>
+
