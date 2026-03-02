@@ -11,113 +11,128 @@
         .text-wasabi { color: var(--wasabi); }
         .bg-wasabi { background-color: var(--wasabi); }
         .border-wasabi { border-color: var(--wasabi); }
-        .glow:hover { box-shadow: 0 0 20px rgba(226, 245, 81, 0.3); }
+        
+        /* Hidden state for the store */
+        #marketplace-store {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Revealed state */
+        #marketplace-store.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .store-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans selection:bg-wasabi selection:text-teal">
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-wasabi">
 
-    <nav class="p-6 flex justify-between items-center bg-white border-b border-slate-100 sticky top-0 z-50">
+    <nav class="p-6 flex justify-between items-center bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm">
         <h1 class="text-2xl font-black tracking-tighter text-[#0D2F2F]">NEXA<span class="text-slate-300">FLIP</span></h1>
         <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest text-slate-500">
-            <a href="#" class="hover:text-teal-900 transition border-b-2 border-transparent hover:border-wasabi">Buy Sites</a>
-            <a href="#" class="hover:text-teal-900 transition border-b-2 border-transparent hover:border-wasabi">Sell Sites</a>
-            <a href="#" class="text-orange-500">Valuation Tool</a>
+            <a href="#" class="hover:text-teal transition">Marketplace</a>
+            <a href="#" class="hover:text-teal transition">Valuations</a>
+            <a href="#" class="text-orange-500">Sell Site</a>
         </div>
-        <div class="flex items-center space-x-4">
-            <a href="#" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-teal">Login</a>
-            <button class="bg-teal text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition shadow-lg">Get Started</button>
-        </div>
+        <button class="bg-teal text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition">Investor Login</button>
     </nav>
 
-    <section class="pt-20 pb-10 px-6 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-between mb-16">
-            <div class="md:w-2/3">
-                <h2 class="text-6xl font-black mb-6 leading-tight">Don't build. <br><span class="text-teal-900 italic underline decoration-wasabi underline-offset-8">Acquire Authority.</span></h2>
-                <p class="text-xl text-slate-500 max-w-xl">NexaFlip is the 2026 gold standard for high-yield digital assets. Skip the 0-1 phase and jump straight to the ROI.</p>
+    <section class="pt-16 pb-12 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-black mb-4">Master the Digital Hunt.</h2>
+            <p class="text-xl text-slate-400">Choose your path in the 2026 digital economy.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-20">
+            <div class="group p-10 bg-white border-2 border-slate-100 rounded-[2.5rem] shadow-xl hover:border-teal transition-all duration-500">
+                <div class="bg-wasabi w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6">⚡</div>
+                <h2 class="text-3xl font-black mb-3 text-teal">Buy an Asset</h2>
+                <p class="text-slate-500 mb-8">Browse pre-vetted, high-yield digital assets ready for immediate acquisition.</p>
+                <button onclick="revealStore()" class="w-full text-center bg-teal text-wasabi py-4 rounded-xl font-black tracking-wide hover:bg-black transition shadow-lg">BROWSE STORE</button>
             </div>
-            <div class="hidden md:block bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 rotate-3">
-                <p class="text-xs font-bold text-slate-400 uppercase mb-2">Market Pulse</p>
-                <p class="text-3xl font-black text-teal-900">$4.2M+</p>
-                <p class="text-sm text-green-500 font-bold">↑ Volume this week</p>
+
+            <div class="group p-10 bg-teal border-2 border-teal rounded-[2.5rem] shadow-xl hover:border-wasabi transition-all duration-500">
+                <div class="bg-slate-800 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6 text-white">💰</div>
+                <h2 class="text-3xl font-black mb-3 text-white">Sell your Exit</h2>
+                <p class="text-slate-400 mb-8">List your asset for free and reach 50,000+ investors globally. Get a 30x exit.</p>
+                <button class="w-full bg-wasabi text-teal py-4 rounded-xl font-black tracking-wide hover:scale-[1.02] transition">LIST YOUR SITE</button>
             </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="group p-12 bg-white border-2 border-slate-100 rounded-[2.5rem] shadow-xl hover:border-teal-900 transition-all duration-500 transform hover:-translate-y-2">
-                <div class="bg-wasabi w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-inner">⚡</div>
-                <h2 class="text-4xl font-black mb-4 text-teal-900">Buy an Asset</h2>
-                <p class="text-slate-500 mb-10 text-lg">Acquire pre-vetted, revenue-generating websites with built-in AI growth tools. Every site includes a 30-day transition guard.</p>
-                <button class="w-full bg-teal text-wasabi py-5 rounded-2xl font-black text-xl tracking-wide group-hover:bg-black transition-all">BROWSE LISTINGS</button>
-            </div>
-
-            <div class="group p-12 bg-teal border-2 border-teal rounded-[2.5rem] shadow-xl hover:border-wasabi transition-all duration-500 transform hover:-translate-y-2">
-                <div class="bg-slate-800 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-8">💎</div>
-                <h2 class="text-4xl font-black mb-4 text-white">Sell your Exit</h2>
-                <p class="text-slate-400 mb-10 text-lg">List your asset for free and reach our global network of 50,000+ vetted investors. Secure your 15x-30x exit today.</p>
-                <button class="w-full bg-wasabi text-teal py-5 rounded-2xl font-black text-xl tracking-wide glow transition-all">LIST YOUR SITE</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white py-20 px-6 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
+        <div id="marketplace-store" class="space-y-8 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-200 pb-8 gap-4">
                 <div>
-                    <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Trending Now</span>
-                    <h3 class="text-3xl font-black text-teal-900">Active Opportunities</h3>
+                    <h2 class="text-4xl font-black text-teal">NexaFlip Inventory</h2>
+                    <p class="text-slate-500 mt-2">Verified assets with audited revenue.</p>
                 </div>
-                <a href="#" class="text-teal font-bold border-b-2 border-wasabi pb-1 hover:text-black transition">View Marketplace →</a>
+                <div class="flex gap-2 text-[10px] font-bold uppercase tracking-widest">
+                    <span class="bg-wasabi text-teal px-4 py-2 rounded-full">All Deals</span>
+                    <span class="bg-slate-200 px-4 py-2 rounded-full hover:bg-slate-300 cursor-pointer">SaaS</span>
+                    <span class="bg-slate-200 px-4 py-2 rounded-full hover:bg-slate-300 cursor-pointer">Content</span>
+                </div>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="border border-slate-100 p-6 rounded-2xl hover:shadow-lg transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-slate-100 text-[10px] font-bold px-2 py-1 rounded uppercase">SaaS</span>
-                        <span class="text-green-600 font-bold text-sm">$2,400/mo</span>
+
+            <div class="store-grid">
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-slate-50 p-3 rounded-xl group-hover:bg-wasabi transition">🤖</div>
+                        <span class="text-[10px] font-black bg-green-100 text-green-700 px-2 py-1 rounded">Vetted</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">AI Content Automator</h4>
-                    <p class="text-slate-400 text-sm mb-6">3,500 Active Users. 85% Profit Margin.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-black text-teal-900 text-xl">$72,000</span>
-                        <button class="text-xs font-bold uppercase bg-slate-50 p-2 rounded hover:bg-wasabi transition">Details</button>
-                    </div>
-                </div>
-                <div class="border border-slate-100 p-6 rounded-2xl hover:shadow-lg transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-slate-100 text-[10px] font-bold px-2 py-1 rounded uppercase">E-com</span>
-                        <span class="text-green-600 font-bold text-sm">$8,100/mo</span>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2">Sustainable Home Goods</h4>
-                    <p class="text-slate-400 text-sm mb-6">Dropship Model. Highly Brandable Domain.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-black text-teal-900 text-xl">$145,000</span>
-                        <button class="text-xs font-bold uppercase bg-slate-50 p-2 rounded hover:bg-wasabi transition">Details</button>
+                    <h3 class="text-xl font-black text-teal">ChatNode Pro</h3>
+                    <p class="text-sm text-slate-400 mb-4">B2B SaaS with 40% retention rate.</p>
+                    <div class="flex items-center justify-between border-t pt-4">
+                        <span class="text-2xl font-black text-teal">$88,000</span>
+                        <button class="bg-teal text-white text-xs font-bold px-4 py-2 rounded hover:bg-wasabi hover:text-teal transition">Inquire</button>
                     </div>
                 </div>
-                <div class="border border-slate-100 p-6 rounded-2xl hover:shadow-lg transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-slate-100 text-[10px] font-bold px-2 py-1 rounded uppercase">Content</span>
-                        <span class="text-green-600 font-bold text-sm">$450/mo</span>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-slate-50 p-3 rounded-xl group-hover:bg-wasabi transition">📈</div>
+                        <span class="text-[10px] font-black bg-blue-100 text-blue-700 px-2 py-1 rounded">Steady</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Outdoor Gear Reviews</h4>
-                    <p class="text-slate-400 text-sm mb-6">Affiliate Revenue. Passive Traffic.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-black text-teal-900 text-xl">$12,500</span>
-                        <button class="text-xs font-bold uppercase bg-slate-50 p-2 rounded hover:bg-wasabi transition">Details</button>
+                    <h3 class="text-xl font-black text-teal">FinanceFlow Blog</h3>
+                    <p class="text-sm text-slate-400 mb-4">Affiliate driven content site in Finance niche.</p>
+                    <div class="flex items-center justify-between border-t pt-4">
+                        <span class="text-2xl font-black text-teal">$32,500</span>
+                        <button class="bg-teal text-white text-xs font-bold px-4 py-2 rounded hover:bg-wasabi hover:text-teal transition">Inquire</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-slate-50 p-3 rounded-xl group-hover:bg-wasabi transition">📦</div>
+                        <span class="text-[10px] font-black bg-orange-100 text-orange-700 px-2 py-1 rounded">Scale Ready</span>
+                    </div>
+                    <h3 class="text-xl font-black text-teal">Glow Skin Co.</h3>
+                    <p class="text-sm text-slate-400 mb-4">Direct-to-consumer e-commerce brand.</p>
+                    <div class="flex items-center justify-between border-t pt-4">
+                        <span class="text-2xl font-black text-teal">$120,000</span>
+                        <button class="bg-teal text-white text-xs font-bold px-4 py-2 rounded hover:bg-wasabi hover:text-teal transition">Inquire</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-20 px-6">
-        <p class="italic font-medium text-slate-400 max-w-lg mx-auto leading-relaxed">
-            "A lion doesn't worry about how many hyenas are in the way. He stays focused on the hunt."
-        </p>
-        <div class="mt-10 pt-10 border-t border-slate-100 text-[10px] font-bold uppercase tracking-widest text-slate-300">
-            &copy; 2026 NexaFlip Markets | All Rights Reserved
-        </div>
+    <footer class="text-center py-20 px-6 opacity-40">
+        <p class="italic font-medium">"A lion doesn't worry about how many hyenas are in the way."</p>
     </footer>
 
+    <script>
+        function revealStore() {
+            const store = document.getElementById('marketplace-store');
+            store.classList.add('active');
+            
+            // Smooth scroll to store
+            window.scrollTo({
+                top: store.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
