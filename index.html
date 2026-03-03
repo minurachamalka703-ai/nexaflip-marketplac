@@ -11,6 +11,7 @@
         .text-wasabi { color: var(--wasabi); }
         .bg-wasabi { background-color: var(--wasabi); }
         .border-wasabi { border-color: var(--wasabi); }
+        .modal-active { overflow: hidden; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
@@ -19,102 +20,153 @@
         <h1 class="text-2xl font-black tracking-tighter text-[#0D2F2F]">NEXA<span class="text-gray-400">FLIP</span></h1>
         <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest text-slate-500">
             <a href="#tech-shop" class="hover:text-teal transition">Gadgets</a>
-            <a href="#digital" class="hover:text-teal transition">Digital Assets</a>
             <a href="mailto:pavijo7452@pazuric.com" class="text-orange-600">Contact Broker</a>
         </div>
-        <a href="mailto:pavijo7452@pazuric.com?subject=List My Asset" class="bg-teal text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition">Sell Your Asset</a>
+        <a href="mailto:pavijo7452@pazuric.com" class="bg-teal text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition">Sell Your Asset</a>
     </nav>
 
     <section class="bg-teal text-white py-16 px-6 text-center">
         <h2 class="text-5xl md:text-6xl font-black mb-6 leading-tight uppercase">Own the <span class="text-wasabi">Future.</span></h2>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10 italic">"A lion doesn't worry about the price of success."</p>
-        <div class="flex flex-col md:flex-row justify-center gap-4">
-            <a href="#tech-shop" class="bg-wasabi text-teal px-10 py-4 rounded-xl font-black text-lg hover:scale-105 transition shadow-lg">BROWSE TECH</a>
-            <a href="mailto:pavijo7452@pazuric.com" class="border-2 border-slate-700 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition">CONTACT US</a>
-        </div>
     </section>
 
     <section id="tech-shop" class="max-w-7xl mx-auto px-6 py-20">
-        <div class="mb-12">
-            <h3 class="text-3xl font-black text-teal uppercase tracking-tighter">Hot Tech & Gadgets</h3>
-            <p class="text-slate-500 font-medium">Verified high-demand hardware</p>
+        <div class="mb-12 text-center">
+            <h3 class="text-4xl font-black text-teal uppercase tracking-tighter">Hot Tech & Gadgets</h3>
+            <p class="text-slate-500 font-medium mt-2">Verified high-demand hardware</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-2 border-slate-100 hover:border-wasabi transition-all group">
-                <div class="p-3">
-                    <div class="h-64 bg-slate-900 rounded-[2rem] flex items-center justify-center relative overflow-hidden">
-                        <img src="https://ibb.co/ZRN9kJtk" class="h-full w-full object-cover opacity-80 group-hover:scale-110 transition-transform" alt="T20 Ultra 2">
-                        <div class="absolute top-4 right-4 bg-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full animate-pulse">DARAZ BESTSELLER</div>
-                        <span class="absolute bottom-4 left-4 text-white font-black text-xs bg-black/50 px-3 py-1 rounded-lg">7X STRAPS INCLUDED</span>
-                    </div>
+            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-2 border-slate-100 hover:border-wasabi transition-all p-3 group">
+                <div class="h-64 bg-slate-900 rounded-[2rem] flex items-center justify-center relative overflow-hidden">
+                    <img src="https://i.ibb.co/ZRN9kJtk/Screenshot-2026-03-03-121706.png" class="h-full w-full object-cover opacity-90 group-hover:scale-110 transition-transform" alt="T20 Ultra 2">
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full">DARAZ BESTSELLER</div>
+                    <div class="absolute bottom-4 left-4 bg-black/60 text-white text-[10px] px-3 py-1 rounded-lg font-bold">7 STRAPS INCLUDED</div>
                 </div>
                 <div class="p-6">
                     <h4 class="text-2xl font-black text-teal">T20 Ultra 2 Max</h4>
-                    <p class="text-slate-500 text-xs mt-2 mb-4 leading-relaxed">
-                        Full health monitoring (Heart, Oxygen, BP) + Bluetooth Calling. Includes charger and 7 different style straps.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-slate-100 text-[9px] font-bold px-2 py-1 rounded">BT 4.0</span>
-                        <span class="bg-slate-100 text-[9px] font-bold px-2 py-1 rounded">2.2mm DIAL</span>
-                        <span class="bg-slate-100 text-[9px] font-bold px-2 py-1 rounded">IOS/ANDROID</span>
-                    </div>
-                    <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl">
-                        <div>
-                            <p class="text-[10px] text-slate-400 font-bold">SALE PRICE</p>
-                            <p class="text-2xl font-black text-teal">$8.00 <span class="text-[10px] font-normal text-slate-400">(Rs. 2,300)</span></p>
+                    <p class="text-slate-500 text-xs mt-2 mb-6">Full Health Suite + BT Calling. Includes Charger & 7 Style Straps.</p>
+                    
+                    <div class="flex flex-col gap-3">
+                        <button onclick="openModal('watchModal')" class="w-full border-2 border-teal text-teal py-2 rounded-xl font-bold text-sm hover:bg-slate-50 transition uppercase tracking-widest">More Info</button>
+                        <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase">Price</p>
+                                <p class="text-xl font-black text-teal">$8.00 <span class="text-[10px] font-normal text-slate-400">(Rs. 2,300)</span></p>
+                            </div>
+                            <a href="mailto:pavijo7452@pazuric.com?subject=Order: T20 Ultra 2" class="bg-wasabi text-teal px-6 py-3 rounded-xl font-black text-sm hover:scale-105 transition">ORDER</a>
                         </div>
-                        <a href="mailto:pavijo7452@pazuric.com?subject=Order: T20 Ultra 2 Watch" class="bg-wasabi text-teal px-6 py-3 rounded-xl font-black hover:bg-teal hover:text-wasabi transition">ORDER</a>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-2 border-slate-100 hover:border-wasabi transition-all group">
-                <div class="p-3">
-                    <div class="h-64 bg-slate-100 rounded-[2rem] flex flex-col items-center justify-center">
-                        <span class="text-7xl mb-4 group-hover:rotate-12 transition-transform">🔊</span>
-                        <p class="font-black text-slate-300 tracking-widest">GTS-1345 SERIES</p>
-                    </div>
+            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-2 border-slate-100 hover:border-wasabi transition-all p-3 group">
+                <div class="h-64 bg-slate-100 rounded-[2rem] flex flex-col items-center justify-center">
+                    <span class="text-7xl group-hover:rotate-12 transition-transform">🔊</span>
+                    <p class="font-black text-slate-300 tracking-widest mt-4">GTS-1345 SERIES</p>
                 </div>
                 <div class="p-6">
                     <h4 class="text-2xl font-black text-teal">Mini Stereo LED</h4>
-                    <p class="text-slate-500 text-xs mt-2 mb-4">Ultra Loud portable audio with LED color lighting. Supports USB, TF, & AUX.</p>
-                    <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl">
-                        <p class="text-2xl font-black text-teal">$19.99</p>
-                        <a href="mailto:pavijo7452@pazuric.com?subject=Order: GTS Speaker" class="bg-teal text-white px-6 py-3 rounded-xl font-black hover:bg-black transition">ORDER</a>
+                    <p class="text-slate-500 text-xs mt-2 mb-6">Ultra Loud portable audio with LED color lighting. Supports USB, TF, & AUX.</p>
+                    
+                    <div class="flex flex-col gap-3">
+                        <button onclick="openModal('speakerModal')" class="w-full border-2 border-teal text-teal py-2 rounded-xl font-bold text-sm hover:bg-slate-50 transition uppercase tracking-widest">More Info</button>
+                        <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl">
+                            <p class="text-xl font-black text-teal">$19.99</p>
+                            <a href="mailto:pavijo7452@pazuric.com?subject=Order: GTS Speaker" class="bg-teal text-white px-6 py-3 rounded-xl font-black text-sm">ORDER</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-2 border-slate-100 hover:border-wasabi transition-all group">
-                <div class="p-3">
-                    <div class="h-64 bg-teal rounded-[2rem] flex flex-col items-center justify-center text-white">
-                        <span class="text-7xl mb-4">📟</span>
-                        <p class="font-black text-wasabi tracking-widest text-sm uppercase">The Digital Vault</p>
-                    </div>
+            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-2 border-slate-100 hover:border-wasabi transition-all p-3 group">
+                <div class="h-64 bg-teal rounded-[2rem] flex flex-col items-center justify-center text-white">
+                    <span class="text-7xl">📟</span>
+                    <p class="font-black text-wasabi tracking-widest text-sm uppercase mt-4">The Digital Vault</p>
                 </div>
                 <div class="p-6">
                     <h4 class="text-2xl font-black text-teal">Creator Pen Drive</h4>
-                    <p class="text-slate-500 text-xs mt-2 mb-4">128GB High-speed drive + 500GB of Premium Templates & AI Prompts inside.</p>
+                    <p class="text-slate-500 text-xs mt-2 mb-6">128GB High-speed drive + 500GB of Premium Templates & AI Prompts inside.</p>
                     <div class="flex justify-between items-center bg-slate-50 p-4 rounded-2xl">
-                        <p class="text-2xl font-black text-teal">$149</p>
-                        <a href="mailto:pavijo7452@pazuric.com?subject=Order: Digital Vault" class="bg-teal text-white px-6 py-3 rounded-xl font-black hover:bg-black transition">ORDER</a>
+                        <p class="text-xl font-black text-teal">$149.00</p>
+                        <a href="mailto:pavijo7452@pazuric.com?subject=Order: Digital Vault" class="bg-teal text-white px-6 py-3 rounded-xl font-black text-sm">ORDER</a>
                     </div>
                 </div>
             </div>
 
         </div>
     </section>
+
+    <div id="watchModal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-[2.5rem] p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal('watchModal')" class="absolute top-6 right-6 font-bold text-2xl text-teal">✕</button>
+            <h2 class="text-3xl font-black text-teal mb-4 uppercase">T20 Ultra 2 Specs</h2>
+            <div class="space-y-4 text-sm">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <p class="font-bold text-teal uppercase text-[10px] tracking-widest mb-1">Functions</p>
+                    <p class="text-slate-600 leading-relaxed">Making/Answering calls, Message Pushing, Sleep Monitoring, Heart Rate, Blood Oxygen, ECG, Sports Mode, Music Control, Weather.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="font-bold text-teal uppercase text-[10px] tracking-widest mb-1">Display</p>
+                        <p class="text-slate-600">2.2mm HD Dial</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="font-bold text-teal uppercase text-[10px] tracking-widest mb-1">Bluetooth</p>
+                        <p class="text-slate-600">Version 4.0</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <p class="font-bold text-teal uppercase text-[10px] tracking-widest mb-1">Language Support</p>
+                    <p class="text-slate-600 text-xs italic">English, French, German, Arabic, Italian, Thai, Spain, Portugal, Russian, Netherlands, Türkiye.</p>
+                </div>
+                <div class="bg-wasabi/10 p-4 rounded-xl border border-wasabi/20">
+                    <p class="font-bold text-teal text-center uppercase text-xs">Inside the Box: 1x Watch, 1x Charger, 7x Straps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="speakerModal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-[2.5rem] p-8 relative shadow-2xl">
+            <button onclick="closeModal('speakerModal')" class="absolute top-6 right-6 font-bold text-2xl text-teal">✕</button>
+            <h2 class="text-3xl font-black text-teal mb-4 uppercase">GTS-1345 Specs</h2>
+            <div class="space-y-4 text-sm text-slate-600">
+                <div class="bg-slate-50 p-4 rounded-xl">
+                    <p>• <span class="font-bold text-teal uppercase text-[10px] tracking-widest">Power:</span> 3W Effective Output</p>
+                    <p class="mt-2">• <span class="font-bold text-teal uppercase text-[10px] tracking-widest">Inputs:</span> Bluetooth, USB Slot, TF Card, 3.5mm AUX</p>
+                    <p class="mt-2">• <span class="font-bold text-teal uppercase text-[10px] tracking-widest">Special:</span> RGB Surround LED Lightings & Built-in Mic</p>
+                    <p class="mt-2">• <span class="font-bold text-teal uppercase text-[10px] tracking-widest">Compatibility:</span> iOS / Android / Windows</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-teal text-white py-16 px-6 text-center mt-20">
         <h2 class="text-wasabi font-black text-3xl mb-4 tracking-tighter">NEXAFLIP MARKETPLACE</h2>
         <p class="text-slate-500 text-sm italic max-w-md mx-auto">"Success is a choice. A lion chooses to lead the market."</p>
         <div class="mt-10 border-t border-slate-800 pt-10">
-            <p class="text-xs text-slate-500 uppercase font-black tracking-widest">Global Operations | 2026 Edition</p>
-            <p class="text-sm mt-2 font-bold">Contact: pavijo7452@pazuric.com</p>
+            <p class="text-sm mt-2 font-bold uppercase tracking-widest">pavijo7452@pazuric.com</p>
         </div>
     </footer>
 
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+            document.body.classList.add('modal-active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.classList.remove('modal-active');
+        }
+        // Close modal if clicking outside of the content box
+        window.onclick = function(event) {
+            if (event.target.className.includes('bg-black/80')) {
+                event.target.style.display = 'none';
+                document.body.classList.remove('modal-active');
+            }
+        }
+    </script>
 </body>
 </html>
