@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NEXAFLIP - Trendy Gadgets & Accessories</title>
+  <title>NEXAFLIP - Trendy Gadgets, Fashion & More</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -86,6 +86,242 @@
     .hero h1 {
       font-size: 3.5rem;
       margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.35rem;
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.95;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #6366f1;
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #4f46e5;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(99,102,241,0.35);
+    }
+
+    /* Categories */
+    #categories {
+      padding: 5rem 0;
+      background: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.6rem;
+      margin-bottom: 3.5rem;
+      color: #1e293b;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.09);
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+
+    .category-card:hover {
+      transform: translateY(-14px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.16);
+    }
+
+    .category-img {
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .category-info {
+      padding: 2rem 1.5rem;
+    }
+
+    .category-title {
+      font-size: 1.65rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+      font-weight: 700;
+    }
+
+    .category-desc {
+      font-size: 1.05rem;
+      color: #64748b;
+      margin-bottom: 1.6rem;
+    }
+
+    /* Products (existing) */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 5rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.35s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 22px 40px rgba(0,0,0,0.14);
+    }
+
+    .product-img {
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .product-info {
+      padding: 1.6rem;
+    }
+
+    .product-title {
+      font-size: 1.22rem;
+      margin-bottom: 0.6rem;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    .product-price {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ec4899;
+      margin-bottom: 1rem;
+    }
+
+    .product-price::after {
+      content: " LKR";
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">NEXA<span>FLIP</span></div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Discover Your Next Favorite Item</h1>
+      <p>Fashion • Electronics • Beauty • Islandwide delivery across Sri Lanka</p>
+      <a href="#categories" class="btn">Explore Categories</a>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="container">
+      <h2 class="section-title">Our Main Categories</h2>
+
+      <div class="categories-grid">
+
+        <div class="category-card">
+          <div class="category-img" style="background-image: url('https://cdn.mos.cms.futurecdn.net/FKiwpmW6PGJVULqLuSnV6U-1920-80.jpg');"></div>
+          <div class="category-info">
+            <h3 class="category-title">Fashion & Apparel</h3>
+            <p class="category-desc">Trendy clothing, accessories, shoes & streetwear — stay stylish every day.</p>
+            <a href="#" class="btn">Shop Fashion</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image: url('https://thumbs.dreamstime.com/b/neatly-arranged-collection-various-modern-gadgets-tech-devices-white-surface-including-drones-cameras-smartphones-356202709.jpg');"></div>
+          <div class="category-info">
+            <h3 class="category-title">Consumer Electronics</h3>
+            <p class="category-desc">Smartphones, earbuds, smartwatches, gadgets & accessories — latest tech at best prices.</p>
+            <a href="#" class="btn">Shop Electronics</a>
+          </div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-img" style="background-image: url('https://thumbs.dreamstime.com/b/natural-organic-cosmetics-serum-cream-mask-wooden-background-flowers-skincare-concept-retro-skin-care-143788387.jpg');"></div>
+          <div class="category-info">
+            <h3 class="category-title">Health & Beauty</h3>
+            <p class="category-desc">Skincare, makeup, haircare, wellness products — look & feel your best naturally.</p>
+            <a href="#" class="btn">Shop Beauty</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">Featured Products</h2>
+
+    <div class="products-grid" id="products">
+
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607936854279-55e8a4c64888?auto=format&fit=crop&q=80&w=800');"></div>
+        <div class="product-info">
+          <h3 class="product-title">Wireless Earbuds Pro</h3>
+          <div class="product-price">12,990</div>
+          <a href="#" class="btn" style="width:100%; text-align:center; padding:0.8rem;">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- You can add more products here -->
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025–2026 NEXAFLIP. All rights reserved.<br>
+      Fast delivery islandwide • 7-day returns • Secure payments</p>
+    </div>
+  </footer>
+
+</body>
+</html>      margin-bottom: 1rem;
       font-weight: 700;
     }
 
@@ -443,6 +679,7 @@
     </script>
 </body>
 </html>
+
 
 
 
