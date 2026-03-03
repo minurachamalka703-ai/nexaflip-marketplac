@@ -1,39 +1,119 @@
-<div class="bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-slate-100 hover:border-wasabi transition-all group">
-    <div class="p-2">
-        <div class="h-56 bg-slate-900 rounded-2xl flex flex-col items-center justify-center text-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-t from-orange-500/20 to-transparent opacity-50"></div>
-            <span class="text-6xl mb-2 z-10">🔊</span>
-            <p class="font-black tracking-widest text-wasabi z-10">GTS-1345 ULTRA LOUD</p>
-            <span class="absolute bottom-4 right-4 bg-wasabi text-teal text-[10px] font-black px-2 py-1 rounded">LED MULTICOLOR</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaFlip | Premium Digital & Tech Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --teal: #0D2F2F; --wasabi: #E2F551; }
+        .bg-teal { background-color: var(--teal); }
+        .text-wasabi { color: var(--wasabi); }
+        .bg-wasabi { background-color: var(--wasabi); }
+        .border-wasabi { border-color: var(--wasabi); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="p-6 flex justify-between items-center bg-white border-b border-slate-100 sticky top-0 z-50">
+        <h1 class="text-2xl font-black tracking-tighter text-[#0D2F2F]">NEXA<span class="text-gray-400">FLIP</span></h1>
+        <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest text-slate-500">
+            <a href="#marketplace" class="hover:text-teal transition">Marketplace</a>
+            <a href="#physical" class="hover:text-teal transition">Tech Shop</a>
+            <a href="mailto:pavijo7452@pazuric.com" class="text-orange-600">Contact Support</a>
         </div>
-    </div>
-    <div class="p-6">
-        <div class="flex justify-between items-start mb-2">
-            <h4 class="text-2xl font-black text-teal">Mini Stereo Pro</h4>
-            <span class="text-orange-600 font-bold text-sm">$19.99</span>
+        <a href="mailto:pavijo7452@pazuric.com" class="bg-teal text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition">Sell Your Asset</a>
+    </nav>
+
+    <section class="bg-teal text-white py-20 px-6 text-center">
+        <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Build your empire.<br><span class="text-wasabi italic">One asset at a time.</span></h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Buy verified digital businesses or high-performance tech gear. Curated for lions, not hyenas.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="#marketplace" class="bg-wasabi text-teal px-10 py-4 rounded-xl font-black text-lg hover:brightness-110 transition shadow-lg">VIEW MARKETPLACE</a>
+            <a href="mailto:pavijo7452@pazuric.com?subject=Asset Listing Inquiry" class="border-2 border-slate-700 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition">LIST YOUR ASSET</a>
         </div>
-        <p class="text-slate-500 text-xs mb-6 leading-relaxed">
-            High-fidelity 3W output with surround color lighting. Perfect for desktop setups and mobile creators.
-        </p>
+    </section>
+
+    <section id="marketplace" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h3 class="text-3xl font-black text-teal uppercase tracking-tighter">Digital Assets</h3>
+                <p class="text-slate-500 font-medium">Revenue-generating websites & SaaS</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl p-2 shadow-sm border border-slate-100 hover:shadow-2xl transition group">
+                <div class="h-44 bg-slate-100 rounded-2xl mb-4 flex items-center justify-center font-black text-slate-300">PREVIEW</div>
+                <div class="px-4 pb-6">
+                    <span class="text-[10px] font-bold text-orange-600 uppercase">E-Commerce</span>
+                    <h4 class="text-xl font-bold text-teal">PetSupplies.ai</h4>
+                    <p class="text-slate-500 text-sm mb-6 mt-1">Automated dropshipping site with active traffic.</p>
+                    <div class="flex justify-between items-center border-t pt-4">
+                        <div><p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Price</p><p class="text-xl font-black text-teal">$2,400</p></div>
+                        <button class="bg-teal text-wasabi px-4 py-2 rounded-lg font-bold text-sm">BUY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="physical" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-100">
+        <h3 class="text-3xl font-black text-teal uppercase tracking-tighter mb-12">The Tech Shop</h3>
         
-        <div class="flex flex-wrap gap-2 mb-8">
-            <span class="bg-slate-100 text-slate-600 text-[10px] px-2 py-1 rounded font-bold">BT 2.1</span>
-            <span class="bg-slate-100 text-slate-600 text-[10px] px-2 py-1 rounded font-bold">USB/TF SLOT</span>
-            <span class="bg-slate-100 text-slate-600 text-[10px] px-2 py-1 rounded font-bold">3.5MM AUX</span>
-            <span class="bg-slate-100 text-slate-600 text-[10px] px-2 py-1 rounded font-bold">MIC READY</span>
-        </div>
-
-        <div class="space-y-3">
-            <div class="flex items-center text-xs text-slate-600">
-                <span class="text-wasabi mr-2">✔</span> Supports iOS / Android / Windows
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-slate-100 hover:border-wasabi transition-all group">
+                <div class="p-2">
+                    <div class="h-56 bg-slate-900 rounded-2xl flex flex-col items-center justify-center text-white relative">
+                        <span class="text-6xl z-10">🔊</span>
+                        <div class="absolute bottom-4 left-4 z-10">
+                            <span class="bg-wasabi text-teal text-[10px] font-black px-2 py-1 rounded">ULTRA LOUD LED</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-black text-teal">GTS-1345 Mini Stereo</h4>
+                    <p class="text-slate-500 text-xs mt-2 mb-4 leading-relaxed">
+                        Mini Bluetooth Speaker with Big Sound & RGB Surround Lighting. Supports USB, TF Card, AUX, & MIC.
+                    </p>
+                    <div class="grid grid-cols-2 gap-2 mb-6">
+                        <div class="text-[10px] text-slate-500 font-bold">✔ iOS / Android</div>
+                        <div class="text-[10px] text-slate-500 font-bold">✔ 500mAh Battery</div>
+                        <div class="text-[10px] text-slate-500 font-bold">✔ 3.5mm Audio</div>
+                        <div class="text-[10px] text-slate-500 font-bold">✔ Pendrive Slot</div>
+                    </div>
+                    <div class="flex justify-between items-center bg-slate-50 p-4 rounded-xl">
+                        <p class="text-2xl font-black text-teal">$19.99</p>
+                        <a href="mailto:pavijo7452@pazuric.com?subject=Order: GTS Speaker" class="bg-teal text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition">ORDER</a>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center text-xs text-slate-600">
-                <span class="text-wasabi mr-2">✔</span> 58mm Ultra-Portable Design
-            </div>
-        </div>
 
-        <button class="w-full bg-teal text-white mt-8 py-4 rounded-xl font-black tracking-widest hover:bg-black transition transform group-hover:scale-[1.02]">
-            ORDER NOW
-        </button>
-    </div>
-</div>
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-slate-100 hover:border-wasabi transition-all group">
+                <div class="p-2">
+                    <div class="h-56 bg-slate-800 rounded-2xl flex items-center justify-center text-white">
+                        <span class="text-6xl">📟</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-black text-teal">The Digital Vault</h4>
+                    <p class="text-slate-500 text-xs mt-2 mb-4">128GB High-speed Pen Drive loaded with 500+ AI Prompts & Web Templates.</p>
+                    <div class="flex justify-between items-center bg-slate-50 p-4 rounded-xl">
+                        <p class="text-2xl font-black text-teal">$149</p>
+                        <a href="mailto:pavijo7452@pazuric.com?subject=Order: Digital Vault" class="bg-teal text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition">ORDER</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-teal text-white py-12 px-6 text-center">
+        <p class="text-wasabi font-black text-lg mb-2">NEXAFLIP™</p>
+        <p class="text-slate-500 text-sm italic">"A lion doesn't worry about how many hyenas are in the way."</p>
+        <p class="mt-8 text-xs text-slate-600 font-bold">CONTACT: pavijo7452@pazuric.com</p>
+    </footer>
+
+</body>
+</html>
